@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+fail() {
+  printf 'FAIL: %s\n' "$1" >&2
+  exit 1
+}
+
+assert_file() {
+  [[ -f "$ROOT/$1" ]] || fail "missing $1"
+}
+
+assert_contains() {
+  local file="$1"
+  local text="$2"
+  grep -Fq "$text" "$ROOT/$file" || fail "$file does not contain: $text"
+}
+
+assert_file README.md
+assert_file Brewfile
+assert_file install.sh
+assert_file .zshrc
+assert_file ghostty/config
+assert_file LICENSE
+assert_file .github/workflows/ci.yml
+
+for formula in \
+  eza bat fd ripgrep fzf zoxide atuin starship gh git-delta lazygit yazi \
+  jq yq mise direnv bottom dust duf hyperfine zellij just uv ast-grep gum \
+  zsh-autosuggestions zsh-syntax-highlighting zsh-completions
+do
+  assert_contains Brewfile "brew \"$formula\""
+done
+
+assert_contains Brewfile 'cask "ghostty"'
+assert_contains Brewfile 'cask "font-jetbrains-mono-nerd-font"'
+assert_contains README.md 'git clone https://github.com/selimfirat/shell-profile.git ~/shell-profile'
+assert_contains README.md 'https://github.com/selimfirat/shell-profile/actions/workflows/ci.yml'
+assert_contains README.md 'MIT License'
+assert_contains .github/workflows/ci.yml 'bash tests/test-repo.sh'
+assert_contains install.sh 'brew update'
+assert_contains install.sh 'brew bundle --file'
+assert_contains install.sh 'backup_path'
+assert_contains .zshrc 'compinit -C'
+assert_contains .zshrc 'zoxide init zsh --cmd cd'
+assert_contains .zshrc 'atuin init zsh'
+assert_contains ghostty/config 'font-family = "JetBrainsMono Nerd Font"'
+
+bash -n "$ROOT/install.sh"
+zsh -n "$ROOT/.zshrc"

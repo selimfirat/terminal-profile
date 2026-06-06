@@ -1,0 +1,51 @@
+# Theme and appearance
+theme = Dark+
+window-theme = dark
+
+# Font stack
+font-family = "JetBrainsMono Nerd Font"
+font-family = "Symbols Nerd Font Mono"
+font-size = 14
+
+# Spacing and readability
+adjust-cell-height = 8%
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+minimum-contrast = 1.3
+
+# Background
+background-opacity = 0.92
+background-opacity-cells = true
+background-blur = 20
+
+# Cursor and input feel
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+# Clipboard/security
+copy-on-select = false
+clipboard-read = ask
+clipboard-write = allow
+clipboard-paste-protection = true
+title-report = false
+
+# Shell integration
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo,path
+
+# Notifications for long-running commands
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 30s
+
+# macOS
+macos-titlebar-style = hidden
+window-save-state = always
+window-step-resize = true
+
+# New tabs/splits/windows inherit current context
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
