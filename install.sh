@@ -52,7 +52,11 @@ brew bundle --file "$ROOT/Brewfile"
 info "Linking shell and terminal configs"
 link_file "$ROOT/.zshrc" "$HOME/.zshrc"
 link_file "$ROOT/ghostty/config" "$HOME/.config/ghostty/config"
-link_file "$ROOT/starship.toml" "$HOME/.config/starship.toml"
+
+info "Generating Starship preset"
+mkdir -p "$HOME/.config"
+backup_path "$HOME/.config/starship.toml"
+starship preset catppuccin-powerline -o ~/.config/starship.toml
 
 info "Validating linked Zsh config"
 zsh -n "$ROOT/.zshrc"
