@@ -1,6 +1,6 @@
-# Shell Profile
+# Terminal Profile
 
-[![CI](https://img.shields.io/github/actions/workflow/status/selimfirat/shell-profile/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/selimfirat/shell-profile/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/selimfirat/terminal-profile/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/selimfirat/terminal-profile/actions/workflows/ci.yml)
 [![macOS](https://img.shields.io/badge/macOS-ready-111827?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
 [![Zsh](https://img.shields.io/badge/Zsh-fast_shell-0f766e?style=for-the-badge&logo=gnubash&logoColor=white)](https://www.zsh.org/)
 [![Ghostty](https://img.shields.io/badge/Ghostty-terminal-7c3aed?style=for-the-badge)](https://ghostty.org/)
@@ -9,13 +9,13 @@
 
 A fast, tidy macOS terminal setup for Zsh and Ghostty. It installs the command-line tools with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
 
-Repository: [github.com/selimfirat/shell-profile](https://github.com/selimfirat/shell-profile)
+Repository: [github.com/selimfirat/terminal-profile](https://github.com/selimfirat/terminal-profile)
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/selimfirat/shell-profile.git ~/shell-profile
-cd ~/shell-profile
+git clone https://github.com/selimfirat/terminal-profile.git ~/terminal-profile
+cd ~/terminal-profile
 ./install.sh
 ```
 
@@ -110,7 +110,7 @@ Range (min ... max): 61.9 ms ... 152.7 ms, 19 runs
 Measured against this repository's checked-in `.zshrc` after the first cache-building run:
 
 ```text
-hyperfine 'ZDOTDIR=/Users/selimfirat/Documents/shell-profile zsh -i -c exit'
+hyperfine 'ZDOTDIR="$PWD" zsh -i -c exit'
 Time (mean +/- sigma): 91.8 ms +/- 11.6 ms [User: 48.7 ms, System: 34.9 ms]
 Range (min ... max): 82.9 ms ... 125.6 ms, 25 runs
 ```
@@ -130,17 +130,6 @@ Suggested GitHub repository settings:
 - Topics: `dotfiles`, `zsh`, `ghostty`, `homebrew`, `macos`, `starship`, `fzf`, `atuin`, `zoxide`
 - Visibility: public
 - Default branch: `main`
-
-## Name Ideas
-
-`shell-profile` is clear and practical. A few alternatives:
-
-- `terminal-profile` - broader, since the repo covers both shell and Ghostty.
-- `macos-terminal-kit` - more shareable, but a little more product-like.
-- `zsh-ghostty-dotfiles` - very searchable and specific.
-- `selim-dotfiles` - personal and conventional.
-
-My pick: keep `shell-profile` if this is mostly for your personal setup, or use `macos-terminal-kit` if you want it to read more like a shareable project.
 
 ## License
 

@@ -36,8 +36,10 @@ done
 
 assert_contains Brewfile 'cask "ghostty"'
 assert_contains Brewfile 'cask "font-jetbrains-mono-nerd-font"'
-assert_contains README.md 'git clone https://github.com/selimfirat/shell-profile.git ~/shell-profile'
-assert_contains README.md 'https://github.com/selimfirat/shell-profile/actions/workflows/ci.yml'
+assert_contains README.md 'git clone https://github.com/selimfirat/terminal-profile.git ~/terminal-profile'
+assert_contains README.md 'https://github.com/selimfirat/terminal-profile/actions/workflows/ci.yml'
+assert_contains README.md '# Terminal Profile'
+assert_contains README.md 'ZDOTDIR="$PWD" zsh -i -c exit'
 assert_contains README.md 'MIT License'
 assert_contains .github/workflows/ci.yml 'bash tests/test-repo.sh'
 assert_contains install.sh 'brew update'
