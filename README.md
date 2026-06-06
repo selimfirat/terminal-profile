@@ -5,7 +5,7 @@
 [![Zsh](https://img.shields.io/badge/Zsh-fast_shell-0f766e?style=for-the-badge&logo=gnubash&logoColor=white)](https://www.zsh.org/)
 [![Ghostty](https://img.shields.io/badge/Ghostty-terminal-7c3aed?style=for-the-badge)](https://ghostty.org/)
 [![Homebrew](https://img.shields.io/badge/Homebrew-managed-fbbf24?style=for-the-badge&logo=homebrew&logoColor=111827)](https://brew.sh/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-111827?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/github/license/selimfirat/terminal-profile?style=for-the-badge&color=111827)](LICENSE)
 
 A fast, tidy macOS terminal setup for Zsh and Ghostty. It installs the command-line tools with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
 
