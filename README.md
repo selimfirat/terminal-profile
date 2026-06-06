@@ -4,9 +4,17 @@
 [![macOS](https://img.shields.io/badge/macOS-ready-111827?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
 [![License](https://img.shields.io/github/license/selimfirat/terminal-profile?style=for-the-badge&color=111827)](LICENSE)
 
-A fast, tidy macOS terminal setup for Zsh and Ghostty. It installs the command-line tools with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
+A compact macOS terminal profile for Zsh and Ghostty. It installs a modern CLI toolkit with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
 
 ## Quick Start
+
+Install Homebrew first if it is not already available:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Then clone and install this profile:
 
 ```bash
 git clone https://github.com/selimfirat/terminal-profile.git ~/terminal-profile
@@ -15,6 +23,18 @@ cd ~/terminal-profile
 ```
 
 Restart Ghostty or open a new terminal tab after installation.
+
+## What The Installer Changes
+
+`install.sh` is intentionally small and explicit:
+
+1. Runs `brew update`.
+2. Installs everything in `Brewfile` with `brew bundle --file`.
+3. Backs up existing files into `~/.dotfiles-backup/<timestamp>/`.
+4. Links `.zshrc` to `~/.zshrc`.
+5. Links `ghostty/config` to `~/.config/ghostty/config`.
+6. Generates `~/.config/starship.toml` with the Catppuccin Powerline preset.
+7. Validates the Zsh config with `zsh -n`.
 
 ## What's Included
 
@@ -45,15 +65,6 @@ starship preset catppuccin-powerline -o ~/.config/starship.toml
 ```
 
 Existing files are moved into `~/.dotfiles-backup/<timestamp>/` before links are created.
-
-## Installer
-
-`install.sh` does four things:
-
-1. Checks that Homebrew is available.
-2. Runs `brew update`.
-3. Installs packages from `Brewfile` with `brew bundle --file`.
-4. Backs up existing config files and symlinks this repo's files into place.
 
 ## Manual Homebrew Commands
 
@@ -96,6 +107,13 @@ brew install --cask \
   ghostty \
   font-jetbrains-mono-nerd-font
 ```
+
+## Package Reference
+
+| Type | Packages |
+| --- | --- |
+| Formulae | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `atuin`, `starship`, `gh`, `git-delta`, `lazygit`, `yazi`, `jq`, `yq`, `mise`, `direnv`, `bottom`, `dust`, `duf`, `hyperfine`, `zellij`, `just`, `uv`, `ast-grep`, `gum`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions` |
+| Casks | `ghostty`, `font-jetbrains-mono-nerd-font` |
 
 ## Benchmark
 
