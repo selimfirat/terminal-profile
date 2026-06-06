@@ -9,8 +9,6 @@
 
 A fast, tidy macOS terminal setup for Zsh and Ghostty. It installs the command-line tools with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
 
-Repository: [github.com/selimfirat/terminal-profile](https://github.com/selimfirat/terminal-profile)
-
 ## Quick Start
 
 ```bash
@@ -114,22 +112,6 @@ hyperfine 'ZDOTDIR="$PWD" zsh -i -c exit'
 Time (mean +/- sigma): 91.8 ms +/- 11.6 ms [User: 48.7 ms, System: 34.9 ms]
 Range (min ... max): 82.9 ms ... 125.6 ms, 25 runs
 ```
-
-## Design Notes
-
-- The `.zshrc` guards Homebrew-specific paths so an unset prefix cannot accidentally produce paths like `/bin` or `/share/...`.
-- Ghostty config is installed at `~/.config/ghostty/config`, matching the existing local setup.
-- The font is `JetBrainsMono Nerd Font`, because it is installed by the Brewfile.
-- Completions use a cached `.zcompdump` and `compinit -C` after the first run for faster shell startup.
-
-## Publishing Notes
-
-Suggested GitHub repository settings:
-
-- Description: `Fast macOS Zsh and Ghostty dotfiles with Homebrew install automation.`
-- Topics: `dotfiles`, `zsh`, `ghostty`, `homebrew`, `macos`, `starship`, `fzf`, `atuin`, `zoxide`
-- Visibility: public
-- Default branch: `main`
 
 ## License
 
