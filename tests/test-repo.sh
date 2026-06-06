@@ -50,6 +50,11 @@ assert_contains .zshrc 'compinit -C'
 assert_contains .zshrc 'zoxide init zsh --cmd cd'
 assert_contains .zshrc 'atuin init zsh'
 assert_contains ghostty/config 'font-family = "JetBrainsMono Nerd Font"'
+assert_contains starship.toml 'add_newline = false'
+assert_contains starship.toml '$directory$git_branch$git_status$conda$character'
+assert_contains starship.toml '[conda]'
+assert_contains starship.toml '[gcloud]'
+assert_contains starship.toml 'disabled = true'
 
 bash -n "$ROOT/install.sh"
 zsh -n "$ROOT/.zshrc"
