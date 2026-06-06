@@ -41,7 +41,6 @@ notify-on-command-finish-action = no-bell,notify
 notify-on-command-finish-after = 30s
 
 # macOS
-macos-titlebar-style = hidden
 window-save-state = always
 window-step-resize = true
 
