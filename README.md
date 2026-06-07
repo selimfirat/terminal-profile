@@ -101,7 +101,8 @@ brew install \
   gum \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
-  zsh-completions
+  zsh-completions \
+  drolosoft/tap/crex
 
 brew install --cask \
   ghostty \
@@ -112,7 +113,7 @@ brew install --cask \
 
 | Type | Packages |
 | --- | --- |
-| Formulae | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `atuin`, `starship`, `gh`, `git-delta`, `lazygit`, `yazi`, `jq`, `yq`, `mise`, `direnv`, `bottom`, `dust`, `duf`, `hyperfine`, `zellij`, `just`, `uv`, `ast-grep`, `gum`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions` |
+| Formulae | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `atuin`, `starship`, `gh`, `git-delta`, `lazygit`, `yazi`, `jq`, `yq`, `mise`, `direnv`, `bottom`, `dust`, `duf`, `hyperfine`, `zellij`, `just`, `uv`, `ast-grep`, `gum`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions`, `crex` |
 | Casks | `ghostty`, `font-jetbrains-mono-nerd-font` |
 
 ## Benchmark
