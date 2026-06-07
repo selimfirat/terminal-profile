@@ -27,14 +27,23 @@ backup_path() {
   fi
 }
 
-link_file() {
+copy_file() {
   local source="$1"
   local target="$2"
 
+  if [[ -L "$target" ]]; then
+    backup_path "$target"
+  elif [[ -f "$target" ]]; then
+    if cmp -s "$source" "$target"; then
+      success "$target is up to date"
+      return
+    fi
+    backup_path "$target"
+  fi
+
   mkdir -p "$(dirname "$target")"
-  backup_path "$target"
-  ln -s "$source" "$target"
-  success "Linked $target"
+  cp "$source" "$target"
+  success "Copied $target"
 }
 
 if ! command -v brew >/dev/null 2>&1; then
@@ -49,16 +58,16 @@ brew update
 info "Installing packages from Brewfile"
 brew bundle --file "$ROOT/Brewfile"
 
-info "Linking shell and terminal configs"
-link_file "$ROOT/.zshrc" "$HOME/.zshrc"
-link_file "$ROOT/ghostty/config" "$HOME/.config/ghostty/config"
+info "Copying shell and terminal configs"
+copy_file "$ROOT/.zshrc" "$HOME/.zshrc"
+copy_file "$ROOT/ghostty/config" "$HOME/.config/ghostty/config"
 
 info "Generating Starship preset"
 mkdir -p "$HOME/.config"
 backup_path "$HOME/.config/starship.toml"
 starship preset catppuccin-powerline -o ~/.config/starship.toml
 
-info "Validating linked Zsh config"
+info "Validating copied Zsh config"
 zsh -n "$ROOT/.zshrc"
 
 success "Done. Open a new terminal tab or restart Ghostty."

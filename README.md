@@ -4,7 +4,7 @@
 [![macOS](https://img.shields.io/badge/macOS-ready-111827?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
 [![License](https://img.shields.io/github/license/selimfirat/terminal-profile?style=for-the-badge&color=111827)](LICENSE)
 
-A compact macOS terminal profile for Zsh and Ghostty. It installs a modern CLI toolkit with Homebrew, links the tracked configs into your home directory, and backs up anything it would replace.
+A compact macOS terminal profile for Zsh and Ghostty. It installs a modern CLI toolkit with Homebrew, copies the tracked configs into your home directory, and backs up anything it would replace.
 
 ## Quick Start
 
@@ -31,8 +31,8 @@ Restart Ghostty or open a new terminal tab after installation.
 1. Runs `brew update`.
 2. Installs everything in `Brewfile` with `brew bundle --file`.
 3. Backs up existing files into `~/.dotfiles-backup/<timestamp>/`.
-4. Links `.zshrc` to `~/.zshrc`.
-5. Links `ghostty/config` to `~/.config/ghostty/config`.
+4. Copies `.zshrc` to `~/.zshrc`.
+5. Copies `ghostty/config` to `~/.config/ghostty/config`.
 6. Generates `~/.config/starship.toml` with the Catppuccin Powerline preset.
 7. Validates the Zsh config with `zsh -n`.
 
@@ -64,7 +64,7 @@ The installer also generates `~/.config/starship.toml` with:
 starship preset catppuccin-powerline -o ~/.config/starship.toml
 ```
 
-Existing files are moved into `~/.dotfiles-backup/<timestamp>/` before links are created.
+Existing files are moved into `~/.dotfiles-backup/<timestamp>/` before copies are made.
 
 ## Manual Homebrew Commands
 
