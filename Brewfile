@@ -27,5 +27,10 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-completions"
 
+tap "drolosoft/tap"
+brew "crex"
+
+tap "manaflow-ai/cmux"
+cask "cmux"
 cask "ghostty"
 cask "font-jetbrains-mono-nerd-font"
