@@ -37,6 +37,10 @@ path=(
   $path
 )
 
+# Visual Studio Code
+[[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]] &&
+  path=("/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $path)
+
 export PATH
 
 # ------------------------------------------------------------
@@ -74,6 +78,7 @@ alias gs='git status --short'
 alias gd='git diff'
 alias lg='lazygit'
 alias yz='yazi'
+alias agyd='agy --dangerously-skip-permissions'
 
 # ------------------------------------------------------------
 # Completions
