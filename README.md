@@ -47,7 +47,7 @@ Restart Ghostty or open a new terminal tab after installation.
 | History | Atuin |
 | Developer workflow | GitHub CLI, Lazygit, Git Delta, Just, Mise, Direnv, uv |
 | Search and code | Ripgrep, fd, ast-grep, jq, yq |
-| System utilities | bottom, dust, duf, hyperfine |
+| System utilities | bottom, htop, dust, duf, hyperfine |
 | Friendly CLI output | eza, bat, gum |
 | Multiplexing | Zellij |
 
@@ -91,6 +91,7 @@ brew install \
   mise \
   direnv \
   bottom \
+  htop \
   dust \
   duf \
   hyperfine \
@@ -113,7 +114,7 @@ brew install --cask \
 
 | Type | Packages |
 | --- | --- |
-| Formulae | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `atuin`, `starship`, `gh`, `git-delta`, `lazygit`, `yazi`, `jq`, `yq`, `mise`, `direnv`, `bottom`, `dust`, `duf`, `hyperfine`, `zellij`, `just`, `uv`, `ast-grep`, `gum`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions`, `crex` |
+| Formulae | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `atuin`, `starship`, `gh`, `git-delta`, `lazygit`, `yazi`, `jq`, `yq`, `mise`, `direnv`, `bottom`, `htop`, `dust`, `duf`, `hyperfine`, `zellij`, `just`, `uv`, `ast-grep`, `gum`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions`, `crex` |
 | Casks | `ghostty`, `font-jetbrains-mono-nerd-font` |
 
 ## Benchmark

@@ -133,6 +133,8 @@ fi
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
+bindkey -s '^G' 'crex pop\n' # crex-pop-hook
+
 # ------------------------------------------------------------
 # Lazy Conda setup
 # ------------------------------------------------------------

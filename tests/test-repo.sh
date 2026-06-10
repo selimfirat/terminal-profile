@@ -29,7 +29,7 @@ assert_file .github/workflows/ci.yml
 
 for formula in \
   eza bat fd ripgrep fzf zoxide atuin starship gh git-delta lazygit yazi \
-  jq yq mise direnv bottom dust duf hyperfine zellij just uv ast-grep gum \
+  jq yq mise direnv bottom htop dust duf hyperfine zellij just uv ast-grep gum \
   zsh-autosuggestions zsh-syntax-highlighting zsh-completions crex
 do
   assert_contains Brewfile "brew \"$formula\""
