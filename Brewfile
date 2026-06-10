@@ -27,6 +27,7 @@ brew "gum"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-completions"
+brew "watch"
 
 tap "drolosoft/tap"
 brew "crex"
